@@ -53,7 +53,7 @@ layout = html.Div(
         ],className='row',style={'color': '#FF8C00'}),
         html.Br(),
         html.Div([
-            html.P('1. Select a desired region from the horizontal tab on top of the page. By default, the dashboard views the global overview.'),
+            html.P('1. Select a desired region from the horizontal tab on top of the page. By default, the dashboard shows the global overview.'),
             html.P('2. For all regions (MESA/RUSSIA/APAC/CHINA/EU) select the analysis type (By Channel/By Region). Data is viewable in terms of channels or regions but not both simultaneously. At any point, any single option can be active.'),
             html.P('3. Select the desired values from the dropdown menus. Choosing dropdown values sequentially from left to right is advised as available options are displayed as per preceeding selections.'),
             html.P('4. Charts can be zoomed in by clicking and dragging the zoom box on the desired location on the chart. Subsequently, you can zoom out to default view by double clicking anywhere on the chart.'),
