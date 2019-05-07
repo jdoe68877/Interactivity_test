@@ -258,7 +258,7 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
     result=cur.fetchall()
     brand_val, salesplkpq_val, salesplkcq_val = zip(*result)
     trial_y=brand_val
-    periods=['Q3 2018','Q4 2018']
+    periods=['Q4 2018','Q1 2019']
     trial_x1=salesplkpq_val
     trial_x2=salesplkcq_val
 
