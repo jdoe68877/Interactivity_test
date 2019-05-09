@@ -74,7 +74,7 @@ layout = html.Div(
             html.P('On selecting a region the dashboard views the regional total charts. The top 15 SKUs are viewed on a country level. Therefore in order to see the third chart; Top 15 SKUs, kindly select a country from the -select country- dropdown.'),
             html.Br(),
             html.Br(),
-            html.P('For any queries please email to nilay.doshi@gfk.com',style={'color': '#FF8C00'})
+            html.P('For any queries please email to pallavi.vashistha@gfk.com',style={'color': '#FF8C00'})
 
         ]),
 
