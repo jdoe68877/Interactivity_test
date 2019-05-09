@@ -99,7 +99,7 @@ layout = html.Div(
             dcc.Tab(label='APME', value='apme', style=tab_style, selected_style=tab_selected_style),
             dcc.Tab(label='RUSSIA', value='russia', style=tab_style, selected_style=tab_selected_style),
             # dcc.Tab(label='APAC', value='apac', style=tab_style, selected_style=tab_selected_style),
-            dcc.Tab(label='CHINA', value='china', style=tab_style, selected_style=tab_selected_style),
+            dcc.Tab(label='CHINA (data updated till Q4 2018)', value='china', style=tab_style, selected_style=tab_selected_style),
             # dcc.Tab(label='EU', value='eu', style=tab_style, selected_style=tab_selected_style)
         ]),
         html.Br(),
