@@ -125,7 +125,7 @@ layout = html.Div(
             dcc.Markdown('''---'''),
             html.Br(),
             html.Br(),
-            html.P('For any queries please email to nilay.doshi@gfk.com',style={'color': '#FF8C00'})
+            html.P('For any queries please email to pallavi.vashistha@gfk.com',style={'color': '#FF8C00'})
 
         ]),
 
