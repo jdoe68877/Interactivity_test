@@ -99,7 +99,7 @@ layout = html.Div(
             dcc.Tab(label='APME', value='apme', style=tab_style, selected_style=tab_selected_style),
             dcc.Tab(label='RUSSIA', value='russia', style=tab_style, selected_style=tab_selected_style),
             # dcc.Tab(label='APAC', value='apac', style=tab_style, selected_style=tab_selected_style),
-            dcc.Tab(label='CHINA (data updated till Q4 2018)', value='china', style=tab_style, selected_style=tab_selected_style),
+            dcc.Tab(label='CHINA (data updated till 2018)', value='china', style=tab_style, selected_style=tab_selected_style),
             # dcc.Tab(label='EU', value='eu', style=tab_style, selected_style=tab_selected_style)
         ]),
         html.Br(),
@@ -258,7 +258,7 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
     result=cur.fetchall()
     brand_val, salesplkpq_val, salesplkcq_val = zip(*result)
     trial_y=brand_val
-    periods=['Q4 2018','Q1 2019']
+    periods=['Q1 2019','Q2 2019']
     trial_x1=salesplkpq_val
     trial_x2=salesplkcq_val
 
@@ -389,7 +389,7 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
     brand_val, valplkpq_val, valplkcq_val = zip(*result)
 
     trial_y=brand_val
-    periods=['Q4 2018','Q1 2019']
+    periods=['Q1 2019','Q2 2019']
 
     trial_x3=valplkpq_val
     trial_x4=valplkcq_val
@@ -780,7 +780,7 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
     result=cur.fetchall()
     brand_val, salesplkpq_val, salesplkcq_val = zip(*result)
     trial_y=brand_val
-    periods=['Q4 2018','Q1 2019']
+    periods=['Q1 2019','Q2 2019']
     trial_x1=salesplkpq_val
     trial_x2=salesplkcq_val
 
@@ -911,7 +911,7 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
     brand_val, valplkpq_val, valplkcq_val = zip(*result)
 
     trial_y=brand_val
-    periods=['Q4 2018','Q1 2019']
+    periods=['Q1 2019','Q2 2019']
 
     trial_x3=valplkpq_val
     trial_x4=valplkcq_val
@@ -1303,11 +1303,11 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
     result=cur.fetchall()
     brands_val, wdpq_val, wdcq_val, uwdpq_val, uwdcq_val = zip(*result)
 
-    trace1 = go.Bar(x=brands_val,y=wdpq_val,name="Q4",text=wdpq_val,textposition = 'auto',marker=dict(color='rgba(172,191,233,1)'))
-    trace2 = go.Bar(x=brands_val,y=wdcq_val,name="Q1",text=wdcq_val,textposition = 'auto',marker=dict(color='rgba(255,139,164,1)'))
+    trace1 = go.Bar(x=brands_val,y=wdpq_val,name="Q1",text=wdpq_val,textposition = 'auto',marker=dict(color='rgba(172,191,233,1)'))
+    trace2 = go.Bar(x=brands_val,y=wdcq_val,name="Q2",text=wdcq_val,textposition = 'auto',marker=dict(color='rgba(255,139,164,1)'))
 
-    trace3 = go.Bar(x=brands_val,y=uwdpq_val,name="Q4",text=uwdpq_val,textposition = 'auto',marker=dict(color='rgba(172,191,233,1)'),showlegend=False)
-    trace4 = go.Bar(x=brands_val,y=uwdcq_val,name="Q1",text=uwdcq_val,textposition = 'auto',marker=dict(color='rgba(255,139,164,1)'),showlegend=False)
+    trace3 = go.Bar(x=brands_val,y=uwdpq_val,name="Q1",text=uwdpq_val,textposition = 'auto',marker=dict(color='rgba(172,191,233,1)'),showlegend=False)
+    trace4 = go.Bar(x=brands_val,y=uwdcq_val,name="Q2",text=uwdcq_val,textposition = 'auto',marker=dict(color='rgba(255,139,164,1)'),showlegend=False)
 
     fig = tls.make_subplots(rows=1, cols=2,shared_xaxes=True,subplot_titles=('Weighted Distribution', 'Unweighted Distribution'))
     fig['layout']['margin'] = {'l': 100, 'r': 120, 'b': 150, 't': 70}
@@ -1362,7 +1362,7 @@ def update_BS_brands(globalregion_name, typeveh_name, base_name):
             }
         ],
         'layout': {
-            'title':'Country Panel Split Q1 2019 (Volume% & Value%)',
+            'title':'Country Panel Split Q2 2019 (Volume% & Value%)',
         }
     }
     return fig
@@ -1383,8 +1383,8 @@ def update_flag(globalregion_name, typeveh_name, base_name):
     result=cur.fetchall()
     ctry_val, salesplkq1_val, salesplkq2_val, shellsalesplkq1_val, shellsalesplkq2_val, valplkq1_val, valplkq2_val, shellvalplkq1_val, shellvalplkq2_val = zip(*result)
 
-    trace1 = go.Bar(y=ctry_val,x=salesplkq1_val,name="Q4",orientation='h',text=salesplkq1_val,textposition = 'auto',hoverinfo='skip',marker=dict(color='rgba(255,122,66,1)'))
-    trace2 = go.Bar(y=ctry_val,x=salesplkq2_val,name="Q1",orientation='h',text=salesplkq2_val,textposition = 'auto',hoverinfo='skip',marker=dict(color='rgba(90,151,2016,1)'))
+    trace1 = go.Bar(y=ctry_val,x=salesplkq1_val,name="Q1",orientation='h',text=salesplkq1_val,textposition = 'auto',hoverinfo='skip',marker=dict(color='rgba(255,122,66,1)'))
+    trace2 = go.Bar(y=ctry_val,x=salesplkq2_val,name="Q2",orientation='h',text=salesplkq2_val,textposition = 'auto',hoverinfo='skip',marker=dict(color='rgba(90,151,2016,1)'))
 
     trace3 = go.Bar(y=ctry_val,x=shellsalesplkq1_val,name="Sales Volume",orientation='h',text=shellsalesplkq1_val,textposition = 'auto',hoverinfo='skip',showlegend=False,marker=dict(color='rgba(255,122,66,1)'))
     trace4 = go.Bar(y=ctry_val,x=shellsalesplkq2_val,name="Sales Value",orientation='h',text=shellsalesplkq2_val,textposition = 'auto',hoverinfo='skip',showlegend=False,marker=dict(color='rgba(90,151,2016,1)'))
@@ -1398,7 +1398,7 @@ def update_flag(globalregion_name, typeveh_name, base_name):
     fig = tls.make_subplots(rows=1, cols=4, shared_yaxes=True,vertical_spacing=0.02,horizontal_spacing=0.05,subplot_titles=('Total Market Sales Volume', 'Shell Sales Volume', 'Total Market Sales Value USD', 'Shell Sales Value USD'))
     fig['layout']['margin'] = {'l': 150, 'r': 20, 'b': 150, 't': 70}
 
-    fig['layout'].update(title='Absolute Panel Volume & Value Figures (Millions) - Q4 2018 vs Q1 2019',titlefont=dict(family='Calibri Light'),barmode='group')
+    fig['layout'].update(title='Absolute Panel Volume & Value Figures (Millions) - Q1 2019 vs Q2 2019',titlefont=dict(family='Calibri Light'),barmode='group')
 
     fig.append_trace(trace1,1,1)
     fig.append_trace(trace2,1,1)
@@ -1437,19 +1437,19 @@ def update_flag(ctry_name):
     y5=pricepq_val
     y6=pricecq_val
 
-    trace1 = go.Bar(x=itemname_val,y=y1,name="Q4",text=salesplkpq_val,textposition = 'auto',marker=dict(color='rgba(0,169,184,1)'))
-    trace2 = go.Bar(x=itemname_val,y=y2,name="Q1",text=salesplkcq_val,textposition = 'auto',marker=dict(color='rgba(255,205,42,1)'))
+    trace1 = go.Bar(x=itemname_val,y=y1,name="Q1",text=salesplkpq_val,textposition = 'auto',marker=dict(color='rgba(0,169,184,1)'))
+    trace2 = go.Bar(x=itemname_val,y=y2,name="Q2",text=salesplkcq_val,textposition = 'auto',marker=dict(color='rgba(255,205,42,1)'))
 
-    trace3 = go.Bar(x=itemname_val,y=y3,name="Q4",text=valplkpq_val,textposition = 'auto',marker=dict(color='rgba(0,169,184,1)'),showlegend=False)
-    trace4 = go.Bar(x=itemname_val,y=y4,name="Q1",text=valplkcq_val,textposition = 'auto',marker=dict(color='rgba(255,205,42,1)'),showlegend=False)
+    trace3 = go.Bar(x=itemname_val,y=y3,name="Q1",text=valplkpq_val,textposition = 'auto',marker=dict(color='rgba(0,169,184,1)'),showlegend=False)
+    trace4 = go.Bar(x=itemname_val,y=y4,name="Q2",text=valplkcq_val,textposition = 'auto',marker=dict(color='rgba(255,205,42,1)'),showlegend=False)
 
-    trace5 = go.Scatter(x=itemname_val,y=y5,name="Q4 Price USD",text=pricepq_val)
-    trace6 = go.Scatter(x=itemname_val,y=y6,name="Q1 Price USD",text=pricecq_val)
+    trace5 = go.Scatter(x=itemname_val,y=y5,name="Q1 Price USD",text=pricepq_val)
+    trace6 = go.Scatter(x=itemname_val,y=y6,name="Q2 Price USD",text=pricecq_val)
 
     fig = tls.make_subplots(rows=2, cols=1,shared_xaxes=True,subplot_titles=('Sales Volume', 'Sales Value USD'))
     fig['layout']['margin'] = {'l': 100, 'r': 120, 'b': 250, 't': 70}
 
-    fig['layout'].update(title='Top 15 SKUs By Country (Millions) - Q1 2019',titlefont=dict(family='Calibri Light'),barmode='group',hovermode='closest')
+    fig['layout'].update(title='Top 15 SKUs By Country (Millions) - Q2 2019',titlefont=dict(family='Calibri Light'),barmode='group',hovermode='closest')
 
     fig.append_trace(trace1,1,1)
     fig.append_trace(trace2,1,1)
