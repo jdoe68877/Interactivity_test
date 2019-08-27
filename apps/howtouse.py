@@ -69,7 +69,7 @@ layout = html.Div(
         html.Br(),
         html.Div([
             html.P('1. Some of the charts take time to load. How do I know if the chart has loaded or its an app error ?',style={'color': '#FF8C00','fontWeight': 'bold'}),
-            html.P('A useful indication to know wether the page or query is loading is to check the tab of your browser. If the page is loading it will show -updating-.Its very likely the app might be experiencing some issues at any point of time but this is very rare. If you do think that the app has encountered an error please report it to pallavi.vashistha@gfk.com with a screenshot.'),
+            html.P('A useful indication to know wether the page or query is loading is to check the tab of your browser. If the page is loading it will show -updating-.Its very likely the app might be experiencing some issues at any point of time but this is very rare. If you do think that the app has encountered an error please report it to geoffrey.pereira@gfk.com with a screenshot.'),
             html.P('2. On selecting a region only the brandshares and distribution charts are visible ?',style={'color': '#FF8C00','fontWeight': 'bold'}),
             html.P('On selecting a region the dashboard views the regional total charts. The top 15 SKUs are viewed on a country level. Therefore in order to see the third chart; Top 15 SKUs, kindly select a country from the -select country- dropdown.'),
             html.Br(),
