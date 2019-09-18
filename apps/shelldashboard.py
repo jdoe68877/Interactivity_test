@@ -13,7 +13,7 @@ import numpy as np
 import plotly
 import dash_auth
 
-import plotly.plotly as py
+import chart_studio.plotly as py
 import plotly.graph_objs as go
 
 from app import app
@@ -38,7 +38,7 @@ tab_selected_style = {
     'fontWeight': 'bold',
     'font-family': 'Calibri Light'
 }
-
+app.css.config.serve_locally = False
 app.css.append_css({'external_url': 'https://cdn.rawgit.com/plotly/dash-app-stylesheets/2d266c578d2a6e8850ebce48fdb52759b2aef506/stylesheet-oil-and-gas.css'})  # noqa: E501
 
 if 'DYNO' in os.environ:
@@ -144,6 +144,7 @@ def update_typeveh(analysistype_val,selected_country):
 
     cur.execute(SQL,(selected_country,))
     result=cur.fetchall()
+
     typeveh_options = zip(*result)
     print(typeveh_options)
     opt=np.array(list(typeveh_options))
@@ -168,6 +169,7 @@ def update_typeveh(analysistype_val,
         SQL="SELECT DISTINCT(region) FROM brandshares_region WHERE ctry=(%s) AND typeveh=(%s)"
         cur.execute(SQL,(selected_country,selected_typeveh,))
         result=cur.fetchall()
+
         region_options = zip(*result)
         print(region_options)
         opt=np.array(list(region_options))
@@ -193,6 +195,7 @@ def update_typeveh(analysistype_val,
         SQL="SELECT DISTINCT(channel) FROM brandshares_channel2 WHERE ctry=(%s) AND typeveh=(%s)"
         cur.execute(SQL,(selected_country,selected_typeveh,))
         result=cur.fetchall()
+
         channel_options = zip(*result)
         print(channel_options)
         opt=np.array(list(channel_options))
@@ -257,6 +260,7 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
     result=cur.fetchall()
     brand_val, salesplkpq_val, salesplkcq_val = zip(*result)
+
     trial_y=brand_val
     periods=['Q1 2019','Q2 2019']
     trial_x1=salesplkpq_val
@@ -315,9 +319,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                             # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -336,9 +340,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                     color=color1,        # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -448,9 +452,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                             # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -469,9 +473,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                     color=color1,        # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -578,9 +582,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                             # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -599,9 +603,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                     color=color1,        # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -709,9 +713,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                             # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -730,9 +734,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                     color=color1,        # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -837,9 +841,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                             # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -858,9 +862,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                     color=color1,        # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -970,9 +974,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                             # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -991,9 +995,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                     color=color1,        # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -1100,9 +1104,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                             # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -1121,9 +1125,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                     color=color1,        # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -1231,9 +1235,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                             # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -1252,9 +1256,9 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 
 
 
-                marker= go.Marker(
+                marker= go.scatter.Marker(
                     color=color1,        # set bar colors
-                    line= go.Line(
+                    line= go.scatter.Line(
                         color='white',  # set bar border color
                         width=1         # set bar border width
                     )
@@ -1294,7 +1298,7 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, channel_name, base_name):
 
     if analysistype_val=='region_analysis':
-        SQL="SELECT brands, wdpq, wdcq, uwdpq, uwdcq FROM distbrand_region4 WHERE ctry=(%s) AND typeveh=(%s) AND region=(%s) AND base=(%s)"
+        SQL="SELECT brands, wdpq, wdcq, uwdpq, uwdcq FROM distbrand_region WHERE ctry=(%s) AND typeveh=(%s) AND region=(%s) AND base=(%s)"
         cur.execute(SQL,(country_name,typeveh_name,region_name,base_name,))
     elif analysistype_val=='channel_analysis':
         SQL="SELECT brands, wdpq, wdcq, uwdpq, uwdcq FROM distbrand_channel WHERE ctry=(%s) AND typeveh=(%s) AND channel=(%s) AND base=(%s)"
@@ -1381,6 +1385,7 @@ def update_flag(globalregion_name, typeveh_name, base_name):
     SQL="SELECT ctry, salesplkq1, salesplkq2, shellsalesplkq1, shellsalesplkq2, valplkq1, valplkq2, shellvalplkq1, shellvalplkq2 FROM pieandbar WHERE globalreg=(%s) AND typeveh=(%s) AND base=(%s)"
     cur.execute(SQL,(globalregion_name,typeveh_name,base_name,))
     result=cur.fetchall()
+
     ctry_val, salesplkq1_val, salesplkq2_val, shellsalesplkq1_val, shellsalesplkq2_val, valplkq1_val, valplkq2_val, shellvalplkq1_val, shellvalplkq2_val = zip(*result)
 
     trace1 = go.Bar(y=ctry_val,x=salesplkq1_val,name="Q1",orientation='h',text=salesplkq1_val,textposition = 'auto',hoverinfo='skip',marker=dict(color='rgba(255,122,66,1)'))
