@@ -1,5 +1,5 @@
 import dash
-import chart_studio.plotly as py
+import plotly.plotly as py
 import pandas as pd
 import re
 import plotly.graph_objs as go
