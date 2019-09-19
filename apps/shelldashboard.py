@@ -1294,7 +1294,7 @@ def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, c
 def update_BS_brands(analysistype_val,country_name, typeveh_name, region_name, channel_name, base_name):
 
     if analysistype_val=='region_analysis':
-        SQL="SELECT brands, wdpq, wdcq, uwdpq, uwdcq FROM distbrand_region4 WHERE ctry=(%s) AND typeveh=(%s) AND region=(%s) AND base=(%s)"
+        SQL="SELECT brands, wdpq, wdcq, uwdpq, uwdcq FROM distbrand_region WHERE ctry=(%s) AND typeveh=(%s) AND region=(%s) AND base=(%s)"
         cur.execute(SQL,(country_name,typeveh_name,region_name,base_name,))
     elif analysistype_val=='channel_analysis':
         SQL="SELECT brands, wdpq, wdcq, uwdpq, uwdcq FROM distbrand_channel WHERE ctry=(%s) AND typeveh=(%s) AND channel=(%s) AND base=(%s)"
