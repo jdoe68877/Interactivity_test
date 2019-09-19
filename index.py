@@ -23,7 +23,7 @@ from io import StringIO
 import plotly
 import dash_auth
 
-import plotly.plotly as py
+import chart_studio.plotly as py
 import plotly.graph_objs as go
 
 global myauthenticateduser
