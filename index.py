@@ -43,7 +43,7 @@ server = app.server
 server.secret_key = os.environ.get('secret_key', 'secret')
 auth = dash_auth.BasicAuth(
     app,
-    (('Retailaudit','Distributionkpis',),('gfkinternal','gfkoneposdb',),('aajaya','gfkoneposdb37',),('APMEGM','conrad',),('APMEREGION','Distributionkpis',),)
+    (('Retailaudit','Distributionkpis',),('gfkinternal','gfkoneposdb',),('aajaya','gfkoneposdb37',),('APMEGM','conrad',),('APMEREGION','Distributionkpis',),('pasikka','gfkoneposdb38',),)
 )
 
 app.layout = html.Div([
@@ -80,7 +80,7 @@ def display_page(pathname):
 
 def render_content(tab):
     myauthenticateduser = auth._username
-    if myauthenticateduser == 'aajaya' or myauthenticateduser == 'APMEGM' or myauthenticateduser == 'APMEREGION':
+    if myauthenticateduser == 'aajaya' or myauthenticateduser == 'APMEGM' or myauthenticateduser == 'APMEREGION' or myauthenticateduser == 'pasikka':
         if tab == 'apme':
             return html.Div([
                     html.Div([
